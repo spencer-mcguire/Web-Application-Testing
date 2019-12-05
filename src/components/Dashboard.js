@@ -23,9 +23,10 @@ export const Dashboard = () => {
   };
 
   const reset = () => {
-    setStrike("kinda");
-    setBall("you");
-    setHit("suck");
+    setStrike(0);
+    setBall(0);
+    setHit(0);
+    console.log("YOU KINDA SUCK");
   };
 
   // STRIKE OUT //
