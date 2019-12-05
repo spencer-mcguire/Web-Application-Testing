@@ -34,7 +34,12 @@ export const Dashboard = () => {
     <>
       <Display strike={strike} ball={ball} />
       <div>
-        <button onClick={() => setStrike(strikeOrBall(strike))}>Strike</button>
+        <button
+          data-testid="strike-button"
+          onClick={() => setStrike(strikeOrBall(strike))}
+        >
+          Strike
+        </button>
         <button onClick={() => setBall(strikeOrBall(ball))}>Ball</button>
         <button onClick={() => foulBall()}>Foul</button>
         <button onClick={() => playerHitTheBall()}>Hit</button>
