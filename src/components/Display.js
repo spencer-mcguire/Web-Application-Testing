@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Display = ({ strike, ball }) => {
+export const Display = ({ strike, ball, hit }) => {
   return (
     <div className="display-container">
       <div>
@@ -14,6 +14,10 @@ export const Display = ({ strike, ball }) => {
         <div className="score-card">
           <h2>Strikes</h2>
           <p>{strike}</p>
+        </div>
+        <div className="score-card">
+          <h2>Runs</h2>
+          <p>{hit}</p>
         </div>
       </div>
     </div>

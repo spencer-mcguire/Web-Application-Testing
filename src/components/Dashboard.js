@@ -5,10 +5,12 @@ import { strikeOrBall } from "../utils/strikeOrBall";
 export const Dashboard = () => {
   const [strike, setStrike] = useState(0);
   const [ball, setBall] = useState(0);
+  const [hit, setHit] = useState(0);
 
   const playerHitTheBall = v => {
     setStrike(0);
     setBall(0);
+    setHit(v + 1);
   };
 
   const foulBall = () => {
@@ -18,6 +20,12 @@ export const Dashboard = () => {
       console.log("FOUL DOESNT CHANGE STRIKE...");
       return strike;
     }
+  };
+
+  const reset = () => {
+    setStrike("kinda");
+    setBall("you");
+    setHit("suck");
   };
 
   // STRIKE OUT //
@@ -32,7 +40,7 @@ export const Dashboard = () => {
 
   return (
     <>
-      <Display strike={strike} ball={ball} />
+      <Display strike={strike} ball={ball} hit={hit} />
       <div>
         <button
           data-testid="strike-button"
@@ -40,9 +48,10 @@ export const Dashboard = () => {
         >
           Strike
         </button>
-        <button onClick={() => setBall(strikeOrBall(ball))}>Ball</button>
-        <button onClick={() => foulBall()}>Foul</button>
-        <button onClick={() => playerHitTheBall()}>Hit</button>
+        <button onClick={() => setBall(strikeOrBall(ball))}> Ball </button>
+        <button onClick={() => foulBall()}> Foul </button>
+        <button onClick={() => playerHitTheBall(hit)}> Hit </button>
+        <button onClick={() => reset()}> RESET </button>
       </div>
     </>
   );
